@@ -26,15 +26,15 @@ static inline long syscall (long num, long arg1, long arg2, long arg3, long arg4
 #define SYS_EXIT 60
 
 static inline void exit (long status) {
-  syscall (SYS_EXIT, status);
+  syscall (SYS_EXIT, status, 0, 0, 0, 0, 0);
 }
 
 static inline void read (int fd, void* buf, long count) {
-  syscall (SYS_READ, fd, (long) buf, count);
+  syscall (SYS_READ, fd, (long) buf, count, 0, 0, 0);
 }
 
 static inline void write (int fd, void* buf, long count) {
-  syscall (SYS_WRITE, fd, (long) buf, count);
+  syscall (SYS_WRITE, fd, (long) buf, count, 0, 0, 0);
 }
 
 #endif
